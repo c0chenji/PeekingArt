@@ -1,0 +1,72 @@
+{% load staticfiles %}
+{% include 'source.html' %}
+<!DOCTYPE html>
+<html lang="en" class="full-height">
+<head>
+{% block header%}
+{% endblock %}
+	<title>myAlbum</title>
+
+  
+<body>
+	
+{% include 'message.html' %} 
+<header>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark black scrolling-nabar">
+    <div class="container">
+      <a class="navbar-brand" href="#"><strong>myAlbum</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+          <a class="nav-link" href='{% url "posts:list" %}'>Home <span class="sr-only">(current)</span></a>
+          </li>       
+          {% if request.user.is_authenticated %}
+          <li class="nav-item active"><a class="nav-link" href='{% static "../accounts/logout" %}'>logout</a></li>
+          {% else %}
+          <li class="nav-item active"><a class="nav-link" href='{% static "../accounts/login" %}'>login</a></li>
+          {% endif %}
+          <li class="nav-item active">
+            {% if request.user.is_authenticated %}
+              <a class="nav-link" href='{% url "posts:create" %}'  role="button">Create Post</a>
+             {% endif %}
+        </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2"  name="q" type="text" placeholder="Search" aria-label="Search" value='{{ request.GET.q }}'/>
+      </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="text-center">
+ 
+  {% block content %}
+
+  {% endblock %}
+ 
+</main>
+<footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+      </div>
+</footer>
+
+
+ <script type="text/javascript" src='{% static "MDB/js/jquery-3.3.1.min.js" %}'></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src='{% static "MDB/js/popper.min.js" %}'></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src='{% static "MDB/js/bootstrap.min.js" %}'></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src='{% static "MDB/js/mdb.min.js" %}'></script>
+
+</body>
+
+</html>

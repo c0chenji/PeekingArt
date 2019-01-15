@@ -1,0 +1,39 @@
+html,
+body,
+header,
+
+}
+
+@media (max-width: 740px) {
+  html,
+  body,
+ 
+}
+@media (min-width: 800px) and (max-width: 850px) {
+  html,
+  body,
+  header,
+}
+.view {
+    background: url('../images/cover.jpg')no-repeat center center;
+    background-size: cover;
+}
+ 
+main{
+  margin-top:59px;
+}
+.landing-bg{
+  /* The image used */
+  background-image: url('../images/cover.jpg');
+
+  /* Full height */
+  height: 80%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 150px;
+  padding-left:10px;
+}
+

@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container list-pos">
+	<div class="row justify-content-md-center">
+	<div class="col col-lg-5">
+ 		{% if instance.image %}
+	 	<div class="card mb-4 shadow-sm">
+	 		<img src='{{instance.image.url}}' class="img-fluid" alt="Responsive image">
+	 	</div>
+	 		<h1>Title:{{title}}</h1>
+			<p ><b>Description</b>: {{ instance.content}}</p>
+	 		<p ><b>PostTime</b>: {{ instance.timestamp }}</p>
+			{% if request.user.is_authenticated %}
+				<div class="d-flex justify-content-between align-items-center">
+					<div class=" btn-group">
+						<button type="button" class="btn btn-sm btn-outline-secondary"><a href='{% url "posts:delete" id=instance.id %}''>Delete</a></button>
+						<button type="button" class="btn btn-sm btn-outline-secondary"><a href='{% url "posts:update" id=instance.id %}''>Edit</a></button>
+					</div>
+				</div>
+			{% endif %}
+ 		{% endif %}
+		</div>
+	</div>
+</div>
+
+{% endblock %}

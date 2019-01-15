@@ -1,0 +1,16 @@
+{% if messages %}
+<div>
+
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+    	{% if "html_font" in message.tags %}
+    	{{ message|safe}}
+    	{% else %}
+    	{{message}}
+    	{% endif%}
+	</li>
+    {% endfor %}
+</ul>
+</div>
+{% endif %}
