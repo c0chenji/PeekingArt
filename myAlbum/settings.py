@@ -125,8 +125,8 @@ REGISTRATION_AUTO_LOGIN = False
   
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  
   
-DEFAULT_FROM_EMAIL = 'apikey'  
-EMAIL_HOST_PASSWORD = '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'
+DEFAULT_FROM_EMAIL = ''  
+EMAIL_HOST_PASSWORD = ''
 # Host for sending email.  
 EMAIL_HOST = 'smtp.sendgrid.net'  
 SITE_NUMBER =1
