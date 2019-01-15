@@ -2,7 +2,8 @@
 {% block content %}
 
 
-    <div class="container py-5">
+    <div class="py-5 bg-light">
+      <div class="container">
       	<div class="row d-flex justify-content-center">
           	{% for obj in object_list %}	
 	          	{% if obj.image %}
@@ -25,6 +26,7 @@
          		{% endif %}
            {% endfor %}
   		</div>
+      </div>
   	</div> 
 
 

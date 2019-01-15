@@ -1,9 +1,3 @@
-html,
-body,
-header,
-
-}
-
 @media (max-width: 740px) {
   html,
   body,
@@ -14,34 +8,25 @@ header,
   body,
   header,
 }
-.landing-bg {
+/*.view {
     background: url('../images/cover.jpg')no-repeat center center;
     background-size: cover;
-    height: 100%;
-
 }
-.main-bg{
-  background: url('../images/background.jpg')repeat center center;
-    background-size: cover;
-    height: 100%;
-}
-/*.login-form p,a{
-    color: white;
-    font-size: large;
-    font-weight: bold;
-  }*/
- 
-
-}
+ */
 main{
-  margin-top:59px;
+  margin-top:56px;
 }
-.login-pos{
-  margin-top: 110px;
+.landing-bg{
+  /* The image used */
+  background-image: url('../images/cover.jpg');
+  /* Full height */
+  height: 92%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.list-pos{
-  margin-top: 32px;
-}
-.form-row>label{
-  font-weight: bold;
+.item-center{
+  align-items: center;
+  display: flex;
 }
