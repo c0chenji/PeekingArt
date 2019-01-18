@@ -1,5 +1,4 @@
-.git
-.idea
+
 myAlbum
 posts
 db.sqlite3
