@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath myAlbum myAlbum.wsgi 

@@ -1,15 +1,9 @@
 import os
-import signal
 
-import sys
-import traceback
+from django.core.wsgi import get_wsgi_application
 
-import time
-from django.core.wsgi import get_wsgi_application
-from whitenoise.django import DjangoWhiteNoise
-from django.core.wsgi import get_wsgi_application
+from dj_static import Cling
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myAlbum.settings")
 
-application = get_wsgi_application()
-application = DjangoWhiteNoise(application)
+application = Cling(get_wsgi_application())
