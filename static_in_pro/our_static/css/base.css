@@ -14,7 +14,7 @@
 }
  */
 main{
-  margin-top:56px;
+  margin-top:52px;
 }
 .landing-bg{
   /* The image used */
@@ -29,4 +29,14 @@ main{
 .item-center{
   align-items: center;
   display: flex;
+}
+.main-bg{
+  background-image: url('../images/cover.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.view-detail{
+  width:100%;
+  object-fit: cover;
+  object-position: center;
 }

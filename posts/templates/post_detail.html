@@ -1,26 +1,27 @@
 {% extends 'base.html'%}
 {% block content %}
-<div class="container list-pos">
-	<div class="row justify-content-md-center">
-	<div class="col col-lg-5">
- 		{% if instance.image %}
-	 	<div class="card mb-4 shadow-sm">
-	 		<img src='{{instance.image.url}}' class="img-fluid" alt="Responsive image">
-	 	</div>
-	 		<h1>Title:{{title}}</h1>
-			<p ><b>Description</b>: {{ instance.content}}</p>
-	 		<p ><b>PostTime</b>: {{ instance.timestamp }}</p>
-			{% if request.user.is_authenticated %}
-				<div class="d-flex justify-content-between align-items-center">
-					<div class=" btn-group">
+<div class="main-bg pattern-6">
+<div class="container">
+	<div class="row py-3">
+		<div class="mx-auto col-md-12 item-center ">			
+			{% if instance.image %}
+			<div class="card ">
+				<div class="view">
+					<img src='{{instance.image.url}}' class="card-img-top view-detail" alt="photo">
+					<div class="card-body">
+						<h4><div class="card-title">Title:{{title}}</div></h4>
+						<p ><b>Description</b>: {{ instance.content}}</p>
+						<p ><b>PostTime</b>: {{ instance.timestamp }}</p>
+						{% if request.user.is_authenticated %}
 						<button type="button" class="btn btn-sm btn-outline-secondary"><a href='{% url "posts:delete" id=instance.id %}''>Delete</a></button>
 						<button type="button" class="btn btn-sm btn-outline-secondary"><a href='{% url "posts:update" id=instance.id %}''>Edit</a></button>
+						{% endif %}
 					</div>
 				</div>
-			{% endif %}
- 		{% endif %}
+				{% endif %}
+			</div>
 		</div>
 	</div>
 </div>
-
+</div>
 {% endblock %}

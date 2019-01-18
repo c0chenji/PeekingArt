@@ -1,33 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-
-
-    <div class="py-5 bg-light">
-      <div class="container">
-      	<div class="row d-flex justify-content-center">
+      <div class="py-5 main-bg pattern">
+        <div class="container">
+      	 <div class="row d-flex justify-content-center">
           	{% for obj in object_list %}	
-	          	{% if obj.image %}
-		          	<div class="col-md-4">
-		         		<div class="card mb-4 shadow-sm">
-		         			
-							<img src='{{obj.image.url }}' class='mg-fluid img-thumbnail' style="height: 400px;object-fit: cover;">
-				            <div class="card-body">
+	          	  {% if obj.image %}
+		          	 <div class="col-md-4">
+		         		   <div class="card mb-4 shadow-sm">
+                        <img src='{{obj.image.url }}' class='mg-fluid img-thumbnail' style="height: 400px;object-fit: cover;">
+                     <div class="card-body">
                       <p class="h5">{{obj.title}}</p>
-				              <p class="card-text">{{ obj.content|linebreaks|truncatechars:120 }}</p>
-				              <div class="d-flex justify-content-between align-items-center">
-				                <div class="btn-group">
-				                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href='{% url "posts:detail" id=obj.id %}'>View</a></button>
-				                </div>
-				                <small class="text-muted">{{ obj.timestamp|timesince }}</small>
-				              </div>
-				            </div>
+                      <p class="card-text">{{ obj.content|linebreaks|truncatechars:120 }}</p>
+                      <div class="d-flex justify-content-between align-items-center">
+
+                        <button type="button" class="btn btn-sm btn-outline-secondary"><a href='{% url "posts:detail" id=obj.id %}'>View</a></button>
+
+                        <small class="text-muted">{{ obj.timestamp|timesince }}</small>
+                      </div>
+                    </div>
 	          			</div>
 	        		</div>   
          		{% endif %}
            {% endfor %}
-  		</div>
+  		  </div>
       </div>
-  	</div> 
+    </div>
+
+
 
 
 		<div class="container pagination">

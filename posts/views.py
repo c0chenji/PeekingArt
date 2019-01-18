@@ -11,7 +11,7 @@ def profile(request):
 	return render (request ,'base.html')
 
 def home(request):
-	return redirect('accounts/login')
+	return redirect('posts:list')
 
 def post_create(request):
 	form = PostForm(request.POST or None,request.FILES or None)

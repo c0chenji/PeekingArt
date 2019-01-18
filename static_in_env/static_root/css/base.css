@@ -14,7 +14,7 @@
 }
  */
 main{
-  margin-top:56px;
+  margin-top:52px;
 }
 .landing-bg{
   /* The image used */
@@ -25,4 +25,21 @@ main{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.item-center{
+  align-items: center;
+  display: flex;
+}
+.main-bg{
+  background-image: url('../images/cover.jpg');
+  background-size: cover;
+  background-repeat:repeat;
+  background-position: center;
+  height: inherit;
+
+}
+.view-detail{
+  width:100%;
+  object-fit: cover;
+  object-position: center;
 }

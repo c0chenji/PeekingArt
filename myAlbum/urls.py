@@ -19,13 +19,16 @@ from django.views.generic import TemplateView
 from django.contrib import admin
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
+from posts.views import (
+   home,
+   profile,
+    )
 urlpatterns = [
-    url(r'^$','posts.views.home',name='home'),  
+    url(r'^$',home,name='home'),  
     url(r'^admin/', admin.site.urls),
     url(r'^posts/',include("posts.urls",namespace="posts")),
     url(r'^accounts/', include('registration.backends.default.urls')), 
-    url(r'^accounts/profile/$','posts.views.profile',name='profile'),  
+    url(r'^accounts/profile/$',profile,name='profile'),  
 ]
 if settings.DEBUG:
 	urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
