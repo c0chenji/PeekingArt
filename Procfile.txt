@@ -1,2 +1,0 @@
-web: gunicorn myAlbum.wsgi
-heroku config:set DISABLE_COLLECTSTATIC=1
