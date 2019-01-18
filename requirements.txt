@@ -2,7 +2,6 @@
 .idea
 myAlbum
 posts
-rango
 db.sqlite3
 manage.py
 requirements.txt
