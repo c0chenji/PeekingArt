@@ -1,5 +1,5 @@
-
-myAlbum
-posts
-db.sqlite3
-manage.py
+Django==1.9.5
+django-crispy-forms==1.6.0
+django-registration-redux==1.6
+olefile==0.44
+Pillow==4.1.1
