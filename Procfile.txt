@@ -1,2 +1,2 @@
 web: gunicorn myAlbum.wsgi
-web: python manage.py runserver
+heroku config:set DISABLE_COLLECTSTATIC=1
